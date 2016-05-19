@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Weave Server Assistant : ">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Weave Server Assistant</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/pstickne/WeaveInstaller">View on GitHub</a>
+
+          <h1 id="project_title">Weave Server Assistant</h1>
+          <h2 id="project_tagline"></h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/pstickne/WeaveInstaller/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/pstickne/WeaveInstaller/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <p>The Weave Server Assistant will guide you through the process of downloading, installing, and configuring Weave on your system. It is designed to work with new or existing Weave installs on <strong>Windows</strong>, <strong>Mac OS X</strong>, and <strong>Linux</strong>. </p>
+
+<p>To get started, please make sure you have the software requirements detailed below for your system. 
+You may then download the Weave Server Assistant by clicking on the link in the download section below.</p>
+
+<h2>
+<a id="software-requirements" class="anchor" href="#software-requirements" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Software Requirements</h2>
+
+<ul>
+<li>
+<a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">Java SE JDK</a> (minimum version 7)</li>
+<li><p><a href="https://www.microsoft.com/en-us/download/details.aspx?id=30679">Visual C++ Redistributable 2012</a> (for Windows)</p></li>
+<li>
+<p>Ubuntu Users can run:</p>
+
+<ol>
+<li>sudo add-apt-repository ppa:webupd8team/java</li>
+<li>sudo apt-get update</li>
+<li>sudo apt-get install oracle-java7-installer</li>
+<li>sudo update-alternatives --config java</li>
+</ol>
+</li>
+</ul>
+
+<h2>
+<a id="download" class="anchor" href="#download" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Download</h2>
+
+<p><a href="http://install.iweave.com/.weave/download.php">Weave Server Assistant</a> — Version 2.0.9 Beta — Size: ~7MB</p>
+
+<h2>
+<a id="install" class="anchor" href="#install" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Install</h2>
+
+<p>There are four major steps that need to be taken in order to successfully install Weave on your system. Here we describe each step so you may have a better understanding of the process.</p>
+
+<h3>
+<a id="select-application-server" class="anchor" href="#select-application-server" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Select Application Server</h3>
+
+<p>The first step after starting up the Weave Server Assistant is to select an application server. This server will act as an environment for Weave to run in and supply an interface for Weave services to communicate between the database and the webpage.</p>
+
+<p>There are currently two choices to choose from:</p>
+
+<ul>
+<li><p><a href="https://eclipse.org/jetty/">Jetty</a> is the first and default choice for new users. It provides a simple self-controlled server environment that runs with the Weave Server Assistant. This means that if Jetty is selected, when the Server Assistant is started, Jetty is also started. Similarly, when the Server Assistant is closed, Jetty is also closed. </p></li>
+<li><p><a href="http://tomcat.apache.org/">Tomcat</a> is the second option to choose (as seen below). Apache Tomcat is provided by the Apache Software Foundation and is designed to run on your system as a <a href="http://en.wikipedia.org/wiki/Operating_system_service_management">system service</a>. Using Tomcat requires that you supply the Weave Server Assistant the path to the <strong>webapps</strong> folder of your Tomcat installation. This is important so that the Weave Server Assistant knows where to put the downloaded Weave files. 
+The typical Tomcat install path on a Windows system is <strong>C:/Program Files/Apache Software Foundation/Tomcat X.0/</strong>.</p></li>
+</ul>
+
+<p><strong>All of these options require that you specify a port number that matches the port the service is running on. You may need to change this if your ports are not default.</strong></p>
+
+<p><img src="http://info.iweave.com/attachments/download/1567/wsa2.png" alt=""></p>
+
+<h3>
+<a id="select-database-application" class="anchor" href="#select-database-application" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Select Database Application</h3>
+
+<p>The next step is to select a database server to store Weave configurations and your personal uploaded data. </p>
+
+<p>There are several choices to choose from:</p>
+
+<ul>
+<li><p><a href="https://www.sqlite.org/">SQLite</a> is the first and default choice for new users. It provides a self-contained, serverless, zero-configuration, transactional SQL database engine. Due to the fact that this choice is <em>serverless</em>, it does not need a host and port number.</p></li>
+<li><p><a href="https://www.mysql.com/">MySQL</a>, <a href="http://www.postgresql.org/">PostgreSQL</a>, and <a href="https://www.oracle.com/database/index.html">Oracle Database</a> are the other choices that incorporate a server environment. Each of these will need a hostname/IP and a corresponding port number.
+<em>Localhost</em> is the default destination for your own system, but if you choose to use an alternate database server you may choose to do so here.</p></li>
+</ul>
+
+<p><img src="http://info.iweave.com/attachments/download/1568/wsa3.png" alt=""></p>
+
+<h3>
+<a id="install-weave" class="anchor" href="#install-weave" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Install Weave</h3>
+
+<p>Now that we have selected our server and database, we are ready to install the Weave package. As shown below, we can quickly and easily check to see if there is a newer version of Weave available by clicking on the <em>Refresh</em> button. This will automatically fetch the latest version from our GitHub repository and compare it to your local revision repository to see if there is a match. </p>
+
+<p>If there is a match, then you will see a status message stating that your install is <strong>Up to Date</strong>.
+If no match is found, then you will see a status message stating <em>Update Available</em> and you may proceed with the install.</p>
+
+<p>By clicking on the <em>Install</em> button, the Server Assistant will automatically download the correct zip file and move it to your server's webapps folder that you previously specified. </p>
+
+<p><img src="http://info.iweave.com/attachments/download/1569/wsa4.png" alt=""></p>
+
+<h3>
+<a id="configure-admin-console" class="anchor" href="#configure-admin-console" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Configure Admin Console</h3>
+
+<p>Finally, Weave has been downloaded and installed. We can now configure the Admin Console with a username and password as well as a connection to the database we set up in a previous step.</p>
+
+<ul>
+<li>Select the <em>Sessions</em> tab </li>
+<li>Click on the <em>Open Admin Console</em> button</li>
+</ul>
+
+<p><img src="http://info.iweave.com/attachments/download/1570/wsa5.png" alt=""></p>
+
+<p>Below, is the first screen that will pop up when opening the Admin Console. </p>
+
+<ul>
+<li>Enter username and password credentials for subsequent logins. 
+
+<ul>
+<li>As an example, weave/12345 has been used for the username and password respectively. </li>
+</ul>
+</li>
+<li>Specify the connection to the database with the IP/port and username/password if required. 
+
+<ul>
+<li>As an example, root/password has been used for the username and password respectively for MySQL on localhost.</li>
+</ul>
+</li>
+</ul>
+
+<p><img src="http://info.iweave.com/attachments/download/1577/wsa6.png" alt=""></p>
+
+<h2>
+<a id="tips-and-tricks" class="anchor" href="#tips-and-tricks" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Tips and Tricks</h2>
+
+<h3>
+<a id="switching-between-milestone-and-nightly-build-downloads" class="anchor" href="#switching-between-milestone-and-nightly-build-downloads" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Switching between Milestone and Nightly build downloads</h3>
+
+<p>Weave milestones provide a stable environment in which common issues and bugs have been resolved. Weave nightly builds contain more features than Weave milestones but may not be as stable. By default, Weave milestones are the default download. You may switch downloads by </p>
+
+<ul>
+<li>Select the <em>Weave</em> tab</li>
+<li>Hold down the <em>Refresh</em> button for half a second</li>
+<li>Select one of the options in the drop down box</li>
+</ul>
+
+<p><img src="http://info.iweave.com/attachments/download/1572/wsa_refresh.png" alt=""></p>
+
+<h3>
+<a id="installing-weave-in-offline-mode" class="anchor" href="#installing-weave-in-offline-mode" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installing Weave in offline mode</h3>
+
+<p>In circumstances when an internet connection is not available or not desired, the Weave Server Assistant can operate in offline mode. </p>
+
+<p>To install a new version of Weave in offline mode:</p>
+
+<ul>
+<li>Download either the milestone or nightly build found under <a href="http://info.iweave.com/projects/weave/wiki/Deployment_Guide#Server-Installation">Weave Binary Archives</a>
+</li>
+<li>Save the zip to your desktop or download folder</li>
+<li>Drag and drop the zip file into the <em>Revision</em> table on the <em>Weave</em> tab</li>
+<li>Click on the revision in the box and click on the <em>Deploy</em> button to install</li>
+</ul>
+
+<p><img src="http://info.iweave.com/attachments/download/1573/wsa_install_offline.png" alt=""></p>
+
+<h2>
+<a id="troubleshooting" class="anchor" href="#troubleshooting" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Troubleshooting</h2>
+
+<h3>
+<a id="how-do-i-find-my-weave-server-assistant-folder" class="anchor" href="#how-do-i-find-my-weave-server-assistant-folder" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How do I find my Weave Server Assistant folder?</h3>
+
+<ul>
+<li>
+<em>Windows</em>
+
+<ul>
+<li>Open a run prompt by holding down the <em>Windows Key + R</em>
+</li>
+<li>Type in the text prompt: <em>%%APPDATA%%</em>
+</li>
+<li>Hit Enter</li>
+<li>Find the folder named .weave</li>
+</ul>
+</li>
+<li>
+<em>Mac OS X</em>
+
+<ul>
+<li>Open a terminal window and input the following:</li>
+<li>cd ~/Library/Application\ Support/.weave/</li>
+</ul>
+</li>
+<li>
+<em>Linux</em>
+
+<ul>
+<li>Open a terminal window and input the following:</li>
+<li>cd ~/.weave/</li>
+</ul>
+</li>
+</ul>
+
+<h3>
+<a id="weave-server-assistant-wont-open-after-updating" class="anchor" href="#weave-server-assistant-wont-open-after-updating" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Weave Server Assistant won't open after updating</h3>
+
+<ul>
+<li>Check to make sure you have installed all <a href="http://info.iweave.com/projects/weave/wiki/Weave_Server_Assistant#Software-Requirements">system requirements</a>
+</li>
+<li>Run the Weave Server Assistant under an account with Administrative privileges</li>
+<li>Check the log files for startup errors found in /.weave/logs/ (instructions above)</li>
+</ul>
+
+<h3>
+<a id="i-cannot-select-the-webapps-folder-for-my-tomcat-installation" class="anchor" href="#i-cannot-select-the-webapps-folder-for-my-tomcat-installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>I cannot select the webapps folder for my Tomcat installation</h3>
+
+<ul>
+<li>Make sure there is a <em>ROOT</em> folder inside of the <em>webapps</em> folder to store all Weave files</li>
+</ul>
+
+<h3>
+<a id="i-receive-a-server-not-found-error-when-opening-the-adminconsole--session-state" class="anchor" href="#i-receive-a-server-not-found-error-when-opening-the-adminconsole--session-state" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>I receive a <em>Server Not Found</em> error when opening the AdminConsole / session state</h3>
+
+<p>This is caused by a communication issue between the client and server. </p>
+
+<ul>
+<li>If you are using Tomcat:
+
+<ul>
+<li>Make sure your Tomcat installation is running</li>
+<li>Restart the Tomcat service to see if the problem persists</li>
+<li>Make sure that the port defined in the Weave Server Assistant matches the port the Tomcat service is running on</li>
+</ul>
+</li>
+<li>If you are using Jetty:
+
+<ul>
+<li>Restart the Weave Server Assistant</li>
+<li>If the problem still persists, open the .weave folder (instructions above) </li>
+<li>Navigate to /plugins/Jetty/logs/</li>
+<li>Find the most recently modified stdout and stderr files.</li>
+<li>Include these in a <a href="http://info.iweave.com/projects/weave/issues/new">bug report</a> describing the issue.</li>
+</ul>
+</li>
+</ul>
+
+<h3>
+<a id="i-receive-a-404-not-found-error-when-opening-the-adminconsole--session-state" class="anchor" href="#i-receive-a-404-not-found-error-when-opening-the-adminconsole--session-state" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>I receive a <a href="http://en.wikipedia.org/wiki/HTTP_404"><em>404 Not Found</em></a> error when opening the AdminConsole / session state</h3>
+
+<p>This is caused by the client requesting content the server does not have.
+<strong>If you are receiving this error after downloading and installing Weave, you may not have write permissions to the directory.</strong>
+Please make sure you are running on a system account with administrator privileges.</p>
+
+<ul>
+<li>If you are using Tomcat:
+
+<ul>
+<li>Make sure you have selected the correct <em>webapps</em> folder in the Weave Server Assistant for your Tomcat installation</li>
+<li>Navigate to your Tomcat's <em>webapps</em> folder using your system's file browser</li>
+<li>Check to see if these files exist
+
+<ul>
+<li><em>WeaveServices.war</em></li>
+<li><em>/ROOT/AdminConsole.html</em></li>
+<li><em>/ROOT/weave.html</em></li>
+</ul>
+</li>
+<li>Redeploy the Weave install files by using the Weave Server Assistant </li>
+<li>If the problem persists, check the most recent log files under <em>.weave/logs/</em>
+</li>
+</ul>
+</li>
+<li>If you are using Jetty:
+
+<ul>
+<li>Navigate to Jetty's <em>webapps</em> folder found in <em>.weave/plugins/Jetty/webapps/</em>
+</li>
+<li>Check to see if these files exist
+
+<ul>
+<li><em>WeaveServices.war</em></li>
+<li><em>/ROOT/AdminConsole.html</em></li>
+<li><em>/ROOT/weave.html</em></li>
+</ul>
+</li>
+<li>Redeploy the Weave install files by using the Weave Server Assistant </li>
+<li>If the problem persists, check the most recent log files under <em>.weave/logs/</em>
+</li>
+</ul>
+</li>
+</ul>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Weave Server Assistant maintained by <a href="https://github.com/pstickne">pstickne</a></p>
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
